@@ -1,0 +1,32 @@
+{
+  "name": "gremlin-template-string",
+  "version": "1.0.0",
+  "description": "Generate Gremlin scripts with bound parameters using ES6 template strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --check-leaks test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbmusso/gremlin-template-string.git"
+  },
+  "keywords": [
+    "gremlin",
+    "tinkerpop",
+    "apache",
+    "graph",
+    "database",
+    "graphdb",
+    "query"
+  ],
+  "author": "Jean-Baptiste Musso <jbmusso+github@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbmusso/gremlin-template-string/issues"
+  },
+  "homepage": "https://github.com/jbmusso/gremlin-template-string#readme",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "mocha": "^2.2.4"
+  }
+}
