@@ -1,26 +1,26 @@
 /**
  * A template function to be used with ES6 template strings.
- * This returns an object with an escaped `script` (String) key and a `params`
- * (Object/map of bound parameters) key.
+ * This returns an object with an escaped `gremlin` (String) key and a
+ * `bindings` (Object/map of bound parameters) key.
  *
  * @param {String} rawString - a raw Gremlin string
  * @return {Object}
  */
-function gremlin(rawString) {
-  var script = '';
-  var params = {};
+function createGremlinQuery(rawString) {
+  var gremlin = '';
+  var bindings = {};
   var inlineParams = [].slice.call(arguments, 1);
   var paramIdentifier;
 
   for (var i = 0; i < inlineParams.length; ++i) {
     paramIdentifier = 'p' + (i + 1);
-    script += rawString[i] + paramIdentifier;
-    params[paramIdentifier] = inlineParams[i];
+    gremlin += rawString[i] + paramIdentifier;
+    bindings[paramIdentifier] = inlineParams[i];
   }
 
-  script += rawString[inlineParams.length];
+  gremlin += rawString[inlineParams.length];
 
-  return { script: script, params: params };
+  return { gremlin: gremlin, bindings: bindings };
 }
 
-module.exports = gremlin;
+module.exports = createGremlinQuery;
